@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://dojv7bidrcq3f"]
+
+[ext_resource type="Texture2D" uid="uid://cd6kedyrjo1ft" path="res://Assets/UI/Title Graphic.png" id="1_4xfc8"]
+[ext_resource type="Texture2D" uid="uid://nj0m0a4exvug" path="res://Assets/UI/Main Background.png" id="1_jpdvv"]
+[ext_resource type="Script" uid="uid://bx26731v1cjpb" path="res://Scripts/MainMenuHandler.gd" id="1_w743n"]
+[ext_resource type="Texture2D" uid="uid://cdt8sniioovhy" path="res://Assets/UI/Jack Main Art.png" id="2_w07va"]
+[ext_resource type="PackedScene" uid="uid://14khtnkitnki" path="res://Scenes/VFX/Glare.tscn" id="4_b63xf"]
+[ext_resource type="Texture2D" uid="uid://bx6kt5nptvvg7" path="res://Assets/UI/Mouse.png" id="5_33m57"]
+[ext_resource type="Texture2D" uid="uid://bls44v6x6lcqp" path="res://Assets/VFX/Boom.png" id="6_b63xf"]
+[ext_resource type="FontFile" uid="uid://dv2fr6au1qpdx" path="res://Fonts/EXEPixelPerfect.ttf" id="7_wcbgv"]
+[ext_resource type="Script" uid="uid://cpuq03aqed3e3" path="res://Scripts/back.gd" id="9_1qmhu"]
+[ext_resource type="Script" uid="uid://brsgd1daxuvpr" path="res://Scripts/OverButton.gd" id="9_wcbgv"]
+[ext_resource type="Script" uid="uid://vxqqbce1e7v5" path="res://Scripts/highscores.gd" id="11_0xcua"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qmhu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xcua"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5ha7"]
+
+[node name="MainMenu" type="Node2D" unique_id=1648412902]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=268482779]
+script = ExtResource("1_w743n")
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1283610065]
+modulate = Color(1.353256, 0.6989228, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_jpdvv")
+
+[node name="Jack" type="TextureRect" parent="CanvasLayer" unique_id=1808183980]
+z_index = 5
+offset_left = -615.0
+offset_top = 27.0
+offset_right = -14.0
+offset_bottom = 631.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_w07va")
+
+[node name="Glare" parent="CanvasLayer/Jack" unique_id=1305647832 instance=ExtResource("4_b63xf")]
+position = Vector2(249, 241)
+scale = Vector2(4, 4)
+
+[node name="Title" type="TextureRect" parent="CanvasLayer" unique_id=597692303]
+offset_left = 1180.0
+offset_top = 77.0
+offset_right = 1789.0
+offset_bottom = 483.0
+texture = ExtResource("1_4xfc8")
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=217310075]
+z_index = 6
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1qmhu")
+
+[node name="Suggestion" type="Panel" parent="CanvasLayer/Panel" unique_id=160810270]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 125.0
+offset_right = 858.0
+offset_bottom = 534.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0xcua")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/Suggestion" unique_id=356175383]
+modulate = Color(5.47, 5.47, 5.47, 1)
+z_index = 2
+layout_mode = 0
+offset_left = 207.0
+offset_top = 79.0
+offset_right = 348.0
+offset_bottom = 220.0
+texture = ExtResource("5_33m57")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel/Suggestion" unique_id=1281145364]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 6.0
+offset_right = 409.0
+offset_bottom = 287.0
+texture = ExtResource("6_b63xf")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/Suggestion" unique_id=2083083896]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 264.0
+offset_right = 500.0
+offset_bottom = 346.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 50
+text = "It is highly recommended to use a mouse."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Highscores" type="Panel" parent="CanvasLayer" unique_id=2063767068]
+offset_left = 700.0
+offset_top = 696.0
+offset_right = 980.0
+offset_bottom = 804.0
+
+[node name="Waves" type="Label" parent="CanvasLayer/Highscores" unique_id=2058298993]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "Waves:"
+
+[node name="Amount" type="Label" parent="CanvasLayer/Highscores/Waves" unique_id=91595454]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 2.0
+offset_right = 273.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "0"
+vertical_alignment = 1
+
+[node name="Defeated" type="Label" parent="CanvasLayer/Highscores" unique_id=1734476646]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 131.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "Enemies Defeated:"
+
+[node name="Amount" type="Label" parent="CanvasLayer/Highscores/Defeated" unique_id=32094236]
+layout_mode = 0
+offset_left = 238.0
+offset_right = 273.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "0"
+vertical_alignment = 1
+
+[node name="Obtained" type="Label" parent="CanvasLayer/Highscores" unique_id=1809964303]
+layout_mode = 0
+offset_top = 67.0
+offset_right = 274.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "Cards Obtained:"
+
+[node name="Amount" type="Label" parent="CanvasLayer/Highscores/Obtained" unique_id=1469102386]
+layout_mode = 0
+offset_left = 238.0
+offset_top = -1.0
+offset_right = 273.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "0"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Highscores" unique_id=25066999]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = -35.0
+offset_right = 276.0
+offset_bottom = -4.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 38
+text = "HIGHSCORES:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Highscores" unique_id=909920157]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 115.0
+offset_right = 212.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("9_1qmhu")
+
+[node name="ButtonsPanel" type="Panel" parent="CanvasLayer" unique_id=626736505]
+offset_left = 700.0
+offset_top = 653.0
+offset_right = 953.0
+offset_bottom = 869.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r5ha7")
+
+[node name="Play" type="Button" parent="CanvasLayer/ButtonsPanel" unique_id=949086358]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 232.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+script = ExtResource("9_wcbgv")
+
+[node name="Highscores" type="Button" parent="CanvasLayer/ButtonsPanel" unique_id=1289538992]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 83.0
+offset_right = 242.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("7_wcbgv")
+theme_override_font_sizes/font_size = 60
+text = "HIGHSCORES"
+script = ExtResource("11_0xcua")
