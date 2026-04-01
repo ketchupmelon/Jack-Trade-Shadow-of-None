@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cy40qloty0dn7"]
+
+[ext_resource type="Script" uid="uid://g2c0rkuwhcan" path="res://Scripts/ProjectileHandler.gd" id="1_l3ous"]
+[ext_resource type="Texture2D" uid="uid://buljseea2cjmm" path="res://Assets/VFX/Shadow Spear.png" id="2_l3ous"]
+[ext_resource type="Script" uid="uid://cpbrfr6i872dp" path="res://Scripts/Force.gd" id="3_oqm3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hneg"]
+atlas = ExtResource("2_l3ous")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxmap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hneg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg3jc"]
+size = Vector2(161, 12)
+
+[node name="Spear" type="Node2D" unique_id=1347687421 node_paths=PackedStringArray("knockback")]
+script = ExtResource("1_l3ous")
+colorInd = 1
+knockback = NodePath("Knockback")
+hitVFX = "Splash"
+damage = 15
+lifeTime = 0.4
+ignoreFadeHit = true
+keepOnHit = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=704897279]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(5.21875, 1)
+sprite_frames = SubResource("SpriteFrames_fxmap")
+frame_progress = 0.50895876
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1062451632]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=421973055]
+shape = SubResource("RectangleShape2D_qg3jc")
+
+[node name="Knockback" type="Node2D" parent="." unique_id=921827577]
+script = ExtResource("3_oqm3e")
+vel = Vector2(100, 80)
+xDamp = 400.0
+yDamp = 400.0
+xOverride = true
+yOverride = true
+xDirect = -1
+yDirect = -1
+metadata/_custom_type_script = "uid://cpbrfr6i872dp"

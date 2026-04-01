@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ct2lcq7keus2m"]
+
+[ext_resource type="Script" uid="uid://cef2w5yvp5v8c" path="res://Scripts/HandScript.gd" id="1_0db5o"]
+[ext_resource type="Texture2D" uid="uid://1cg1dt0y7stg" path="res://Assets/UI/Cards/Details/Snatch Extend.png" id="2_0db5o"]
+
+[node name="ShadowHand" type="Node2D" unique_id=1773467321]
+script = ExtResource("1_0db5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2093091740]
+texture = ExtResource("2_0db5o")

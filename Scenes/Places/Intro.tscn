@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://7hi2bi2sgso"]
+
+[ext_resource type="Texture2D" uid="uid://dopsnunv28l5u" path="res://Assets/UI/Cutscene/Colors.png" id="1_iq5m5"]
+[ext_resource type="Script" uid="uid://bmy811g88ct56" path="res://Scripts/IntroHandler.gd" id="1_om787"]
+[ext_resource type="FontFile" uid="uid://dv2fr6au1qpdx" path="res://Fonts/EXEPixelPerfect.ttf" id="2_om787"]
+[ext_resource type="Texture2D" uid="uid://dw8nxjfr1s6a3" path="res://Assets/UI/Cards/Card Template.png" id="3_mqmv7"]
+[ext_resource type="Texture2D" uid="uid://c7sxj4r3jai3q" path="res://Assets/UI/Cards/Deck.png" id="4_ociuu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w2yr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8sr1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om787"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Intro" type="Node2D" unique_id=917371381]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=442166228]
+script = ExtResource("1_om787")
+
+[node name="Image" type="TextureRect" parent="CanvasLayer" unique_id=891730660]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iq5m5")
+
+[node name="Stored" type="Control" parent="CanvasLayer/Image" unique_id=1763071752]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1337010371]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 473.0
+offset_top = 157.0
+offset_right = 716.0
+offset_bottom = 400.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1804743509]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 551.0
+offset_top = 177.0
+offset_right = 794.0
+offset_bottom = 420.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1747861099]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 641.0
+offset_top = 182.0
+offset_right = 884.0
+offset_bottom = 425.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1368748619]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -47.0
+offset_top = 173.0
+offset_right = 196.0
+offset_bottom = 416.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=495901880]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 53.0
+offset_top = 174.0
+offset_right = 296.0
+offset_bottom = 417.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1401565023]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 183.0
+offset_right = 395.0
+offset_bottom = 426.0
+texture = ExtResource("4_ociuu")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Image/Stored" unique_id=1724363832]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 958.0
+offset_top = 181.0
+offset_right = 1201.0
+offset_bottom = 424.0
+texture = ExtResource("4_ociuu")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=536408653]
+z_index = 5
+offset_left = 12.0
+offset_top = 560.0
+offset_right = 1137.0
+offset_bottom = 645.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_om787")
+theme_override_font_sizes/font_size = 50
+text = "Cutscene text"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=694877663]
+z_index = 5
+offset_left = 923.0
+offset_top = 7.0
+offset_right = 1147.0
+offset_bottom = 31.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_om787")
+theme_override_font_sizes/font_size = 30
+text = "Press ENTER to skip"
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="TopBoarder" type="Panel" parent="CanvasLayer" unique_id=2056089218]
+z_index = 4
+offset_right = 1152.0
+offset_bottom = 90.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w2yr")
+
+[node name="BottomBoarder" type="Panel" parent="CanvasLayer" unique_id=1350626383]
+z_index = 4
+offset_top = 558.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w2yr")
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1843948817]
+modulate = Color(0, 0, 0, 1)
+z_index = 6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8sr1")
+
+[node name="Flash" type="Panel" parent="CanvasLayer" unique_id=1297434384]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_om787")
+
+[node name="Cards" type="Control" parent="CanvasLayer" unique_id=1009685094]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Cards" unique_id=230028415]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 669.0
+offset_right = 313.0
+offset_bottom = 919.0
+texture = ExtResource("3_mqmv7")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Cards" unique_id=535160652]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 462.0
+offset_top = 669.0
+offset_right = 712.0
+offset_bottom = 919.0
+texture = ExtResource("3_mqmv7")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Cards" unique_id=575999419]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 0
+offset_left = 867.0
+offset_top = 669.0
+offset_right = 1117.0
+offset_bottom = 919.0
+texture = ExtResource("3_mqmv7")

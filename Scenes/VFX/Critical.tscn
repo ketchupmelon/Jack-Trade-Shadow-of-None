@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhosois5fgdsx"]
+
+[ext_resource type="FontFile" uid="uid://dv2fr6au1qpdx" path="res://Fonts/EXEPixelPerfect.ttf" id="1_lx4j2"]
+
+[node name="Critical" type="Label" unique_id=1506349909]
+offset_left = 1457.0
+offset_top = 477.0
+offset_right = 1515.0
+offset_bottom = 503.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5019608)
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("1_lx4j2")
+theme_override_font_sizes/font_size = 50
+text = "CRITICAL!!"
